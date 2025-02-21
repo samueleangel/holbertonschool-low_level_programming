@@ -1,26 +1,27 @@
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
 /**
- *main - Generates a random number and determinates conditions.
+ *main - Main entry
  *
- *Returns: Always 0 (Success)
+ *Return: Always 0 (Success)
+ *
  */
 int main(void)
 {
 	int n;
 
-	srand(time(0));
-	n = (rand() % 7) - 3;
-	/* Evaluates if the number is positive, negative or equal to zero */
+	srand(time(0)); 
+	n = rand() - RAND_MAX / 2; 
+
 	if (n > 0)
 	{
-		printf("%d is positive\n", n);
+		printf("%d is positive\n", n); 
 	}
 	else if (n == 0)
 	{
-		printf("%d is equal to zero\n", n);
+		printf("%d is zero\n", n); 
 	}
 	else
 	{
