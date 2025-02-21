@@ -12,7 +12,7 @@ int main(void)
 	int n;
 
 	srand(time(0));
-	n = rand() - RAND_MAX / 2;
+	n = (rand() % 7) - 3;
 	/* Evaluates if the number is positive, negative or equal to zero */
 	if (n > 0)
 	{
