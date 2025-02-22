@@ -5,6 +5,6 @@
 int _putchar(char c);
 
 /* Declaration of _isalpha */
-int _isalpha(int c);
+int print_sign(int n);
 
 #endif /* MAIN_H */
