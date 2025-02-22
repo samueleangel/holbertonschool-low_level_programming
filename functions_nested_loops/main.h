@@ -4,7 +4,7 @@
 /* Prototype of _putchar */
 int _putchar(char c);
 
-/* jack_bauer Prototype */
-void jack_bauer(void);
+/* times_table prototype */
+void times_table(void);
 
 #endif /* MAIN_H */
