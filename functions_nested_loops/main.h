@@ -5,6 +5,6 @@
 int _putchar(char c);
 
 /* Print_alphabet prototype */
-void print_alphabet(void);
+void print_alphabet_x10(void);
 
 #endif /* MAIN_H */
