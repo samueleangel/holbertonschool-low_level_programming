@@ -5,6 +5,6 @@
 int _putchar(char c);
 
 /* Print_alphabet prototype */
-void print_alphabet_x10(void);
+int _islower(int c);
 
 #endif /* MAIN_H */
