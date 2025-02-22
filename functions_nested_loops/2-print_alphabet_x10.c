@@ -23,4 +23,5 @@ void print_alphabet_x10(void)
 
 		/* Prints a new line */
 		_putchar('\n');
+	}
 }
