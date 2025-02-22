@@ -4,7 +4,7 @@
 /* _putchar prototype */
 int _putchar(char c);
 
-/* Print_alphabet prototype */
-int _islower(int c);
+/* Declaration of _isalpha */
+int _isalpha(int c);
 
 #endif /* MAIN_H */
