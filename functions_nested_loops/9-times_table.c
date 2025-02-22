@@ -20,7 +20,8 @@ void times_table(void)
 
 			/* Prints the product */
 			if (column == 0)
-			{
+			{	
+				_putchar(' ');
 				_putchar('0' + product);
 			}
 			else
@@ -40,6 +41,6 @@ void times_table(void)
 		}
 
 		/* Prints a new line at the end of reach line */
-		_putchar('n');
+		_putchar('\n');
 	}
 }
