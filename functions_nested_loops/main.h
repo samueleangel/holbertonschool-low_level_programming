@@ -4,7 +4,7 @@
 /* Prototype of _putchar */
 int _putchar(char c);
 
-/* Prototype of print_last_digit */
-int print_last_digit(int);
+/* jack_bauer Prototype */
+void jack_bauer(void);
 
 #endif /* MAIN_H */
