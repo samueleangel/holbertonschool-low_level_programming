@@ -1,10 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* _putchar prototype */
-int _putchar(char c);
-
-/* Declaration of _isalpha */
-int print_sign(int n);
+/* Prototype of _abs */
+int _abs(int);
 
 #endif /* MAIN_H */
