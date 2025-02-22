@@ -12,7 +12,7 @@ void print_alphabet(void)
 
 	/* Prints the alphabet in lowercase */
 	for (c = 'a'; c <= 'z'; c++)
-		putchar(c);
+		_putchar(c);
 
 	/* Prints new line */
 	_putchar('\n');
