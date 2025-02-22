@@ -31,7 +31,7 @@ void times_table(void)
 				_putchar(' ');
 
 				/* Prints the number with format */
-				if (product < 10)
+				if (product <= 10)
 				{
 					_putchar(' ');
 				}
