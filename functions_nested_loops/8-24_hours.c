@@ -17,7 +17,7 @@ void jack_bauer(void)
 		for (minute = 0; minute < 60; minute++)
 		{
 			/* Prints the hour (HH) */
-			_putchar((hout / 10) + '0');
+			_putchar((hour / 10) + '0');
 			_putchar((hour % 10) + '0');
 
 			/* Prints the separator ':' */
