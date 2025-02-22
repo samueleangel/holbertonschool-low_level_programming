@@ -40,5 +40,6 @@ void times_table(void)
 		}
 
 		/* Prints a new line at the end of reach line */
+		_putchar('n');
 	}
 }
