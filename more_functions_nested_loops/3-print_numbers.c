@@ -1,4 +1,6 @@
 #include <unistd.h>
+#include "main.h"
+
 /**
  * print_numbers - Prints the numbers from 0 to 9, followed by a new line.
  *
@@ -7,11 +9,6 @@
  *
  * Return: void
  */
-int _putchar(char c)
-{
-		return (write(1, &c, 1));
-}
-
 void print_numbers(void)
 {
 	int i;
