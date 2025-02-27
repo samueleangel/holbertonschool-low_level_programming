@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include "main.h"
+#include <unistd.h>
 
 /**
  * print_diagonal - Draws a diagonal line on the terminal.
