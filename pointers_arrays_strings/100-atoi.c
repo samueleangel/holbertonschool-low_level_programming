@@ -27,7 +27,7 @@ int _atoi(char *s)
 			digit_found = 1;
 			/* Check for overflow before updating result */
 			if (result > (INT_MAX / 10) || (result == (INT_MAX / 10) && (*s - '0')
-			> (INT_MAX % 10))
+			> (INT_MAX % 10)))
 			{
 				return (sign == 1 ? INT_MAX : INT_MIN);
 			}
