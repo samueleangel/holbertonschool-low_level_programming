@@ -15,7 +15,7 @@ char *_strcat(char *dest, char *src);
 {
 	int dest_len = 0; /* Length of the 'dest' string */
 	int i = 0; /* Index to traverse 'src' */
-	
+
 	/* Calculate the length of 'dest' */
 	while (dest[dest_len] != '\0')
 	{
@@ -31,5 +31,5 @@ char *_strcat(char *dest, char *src);
 
 	dest[dest_len + i] = '\0'; /* Add the null terminator */
 
-	return (dest); 
+	return (dest);
 }
