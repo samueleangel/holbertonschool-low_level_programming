@@ -1,11 +1,6 @@
 #include "main.h"
 #include <unistd.h>
 
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
 /**
  * reset_to_98 - Updates the value pointed to by a pointer to 98.
  * @n: A pointer to an int whose value will be updated.
