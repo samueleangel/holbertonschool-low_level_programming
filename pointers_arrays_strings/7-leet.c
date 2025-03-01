@@ -19,7 +19,7 @@ char *leet(char *str)
 			if (str[i] == letters[j])
 			{
 				str[i] = leet_chars[j];
-				break; 
+				break;
 			}
 		}
 	}
