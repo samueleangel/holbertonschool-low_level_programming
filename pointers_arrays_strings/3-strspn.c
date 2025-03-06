@@ -5,7 +5,8 @@
  * @s: Pointer to the main string.
  * @accept: Pointer to the substring containing accepted characters.
  *
- * Return: Number of bytes in the initial segment of s consisting only of bytes from accept.
+ * Return: Number of bytes in the initial segment of s consisting only of
+ * bytes from accept.
  */
 unsigned int _ strspn(char *s, char *accept)
 {
@@ -23,7 +24,7 @@ unsigned int _ strspn(char *s, char *accept)
 			}
 		}
 		if (!*a)
-			return(count);
+			return (count);
 		s++;
 	}
 	return (count);
