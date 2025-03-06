@@ -5,7 +5,8 @@
  * @s: Pointer to the main string.
  * @accept: Pointer to the substring containing accepted bytes.
  *
- * Return: Pointer to the first occurrence in s of any byte in accept, or NULL if not found.
+ * Return: Pointer to the first occurrence in s of any byte in accept,
+ * or NULL if not found.
  */
 char *_strpbrk(char *s, char *accept)
 {
