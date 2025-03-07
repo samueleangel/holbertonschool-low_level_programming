@@ -7,7 +7,7 @@
  *
  * Return: The natural square root, or -1 if none exists.
  */
-int find_sqrt(int n, int guess)
+int _sqrt_recursion(int n)
 {
 	if (guess * guess > n)
 	{
