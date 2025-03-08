@@ -9,7 +9,7 @@
  *
  * Return: 0 on success, 1 on error
  */
-int main(int argc, char *argc[])
+int main(int argc, char *argv[])
 {
 	int sum = 0;
 	int i, j;
@@ -24,12 +24,13 @@ int main(int argc, char *argc[])
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			if (!isdigit(argc[i][j]))
+			if (!isdigit(argv[i][j]))
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 
