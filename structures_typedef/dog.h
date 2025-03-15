@@ -2,6 +2,7 @@
 #define DOG_H
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * struct dog - Structure to represent a dog.
