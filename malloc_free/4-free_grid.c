@@ -5,27 +5,17 @@
  *
  * Return: 0 on success, 1 on failure.
  */
-int main(void)
+void free_grid (int **grid, int height)
 {
-	int **grid;
-	int width = 5, height = 4;
-	int i, j;
+	int i;
 
-	grid = alloc_grid(width, height);
 	if (grid == NULL)
-	{
-		printf("Failed to allocate grid. \n");
-		return (1);
-	}
+		return;
 
 	for (i = 0; i < height; i++)
 	{
-		for (j = 0; j < width; j++)
-			printf("%d ", grid[i][j]);
-		printf("\n");
+		free(grid[i]);
 	}
 
-	free_grid(grid, height);
-
-	return (0);
+	free(grid);
 }
