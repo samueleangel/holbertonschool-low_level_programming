@@ -1,11 +1,13 @@
 #include "main.h"
 
 /**
- * main - Entry point of the program.
+ * free_grid - Frees a 2D grid previously created by alloc_grid.
+ * @grid: The 2D grid to free.
+ * @height: The height of the grid.
  *
- * Return: 0 on success, 1 on failure.
+ * Return: void
  */
-void free_grid (int **grid, int height)
+void free_grid(int **grid, int height)
 {
 	int i;
 
