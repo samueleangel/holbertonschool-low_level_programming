@@ -23,18 +23,16 @@ void print_all(const char * const format, ...)
 
 			if (format[i] == 'c')
 				printf("%c", va_arg(args, int));
-			else if (format[i] == 'i')
+			if (format[i] == 'i')
 				printf("%d", va_arg(args, int));
-			else if (format[i] == 'i')
+			if (format[i] == 'i')
 				printf("%f", va_arg(args, double));
-			else if (format[i] == 's')
+			if (format[i] == 's')
 			{
 				str = va_arg(args, char *);
-				if (!str)
-					str = "(nil)";
-				printf("%s", str);
+				printf("%s", str ? str : "(nil)";
 			}
-
+			i++;
 			separator = ", ";
 		}
 		i++;
