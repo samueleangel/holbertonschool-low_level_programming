@@ -18,9 +18,9 @@ void print_all(const char * const format, ...)
 	{
 		while (format[i])
 		{
-			check = format[i] == 'c' || format [i] == 'i' ||
-			format[i] == 'f' || format[i] == printf("%s", check ?
-			sep : "");
+			check = format[i] == 'c' || format[i] == 'i' ||
+			format[i] == 'f' || format[i] == 's';
+		       	printf("%s", check ? sep : "");
 			sep = check ? ", " : sep;
 			check && format[i] == 'c' ? printf("%c", 
 			va_arg(args, int)) : 0;
