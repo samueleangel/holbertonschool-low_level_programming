@@ -30,12 +30,11 @@ void print_all(const char * const format, ...)
 			if (format[i] == 's')
 			{
 				str = va_arg(args, char *);
-				printf("%s", str ? str : "(nil)";
+				printf("%s", str ? str : "(nil)");
 			}
 			i++;
 			separator = ", ";
 		}
-		i++;
 	}
 
 	va_end(args);
