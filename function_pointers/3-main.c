@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	operation = get_op_funct(argv[2]);
+	operation = get_op_func(argv[2]);
 
 	if (operation == NULL || argv[2][1] != '\0')
 	{
