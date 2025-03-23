@@ -16,7 +16,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	const char *ptr = fortmat;
+	const char *ptr = format;
 	char *str;
 	char c;
 	int i;
