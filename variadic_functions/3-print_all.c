@@ -21,38 +21,30 @@ void print_all(const char * const format, ...)
 	char c;
 	int i;
 	float f;
+	int printed = 0;
 
 	va_start(args, format);
 
 	while (*ptr)
 	{
-		if (*ptr == 'c')
+		if (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's')
 		{
-			c = (char)va_arg(args, int);
-			printf("%c", c);
-		}
-		else if (*ptr == 'i')
-		{
-			i = va_arg(args, int);
-			printf("%d", i);
-		}
-		else if (*ptr == 'f')
-		{
-			f = (float)va_arg(args, double);
-			printf("%f", f);
-		}
-		else if (*ptr == 's')
-		{
-			str = va_arg(args, char *);
-			if (str == NULL)
-				printf("(nil)");
-			else
-				printf("%s", str);
+			if (printed)
+				printf(", ");
+
+			printed = 1;
+
+			(*ptr == 'c') && (c = (char)va_arg(args, int),
+		 	printf("%c", c));
+			(*ptr == 'i') && (i = va_arg(args, int),
+			printf("%d", i));
+			(*ptr == 'f') && (f = (float)va_arg(args, double),
+			printf("%f", f));
+			(*ptr == 's') && ((str = va_arg(args, char *)) == NULL ?
+			printf("(nil)"): printf("%s", str)); 
 		}
 
 		ptr++;
-		if (*ptr)
-			printf(", ");
 	}
 
 	va_end(args);
