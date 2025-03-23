@@ -3,37 +3,56 @@
 #include <stdio.h>
 
 /**
- * print_all - Prints anything based on the given format.
- * @format: A list of types of arguments passed to the function.
+ * print_all - Prints values based on a format string.
+ * @format: A string containing the format specifiers.
+ * c: char, i: int, f: float; s: char* (if NULL, print "(nil)").
+ * Other characters are ignored.
+ *
+ * Descritpion: This function takes a format string and a variable number 
+ * of arguments. It prints the arguments according to the format.
+ * The format string specifies the type of each argument.
+ * A newline is printed at the end.
  */
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, check;
-	char *str, *sep = "";
+	const char *ptr = fortmat;
+	char *str;
+	char c;
+	int i;
+	float f;
 
 	va_start(args, format);
 
-	while (format)
+	while (*ptr)
 	{
-		while (format[i])
+		if (*ptr == 'c')
 		{
-			check = format[i] == 'c' || format[i] == 'i' ||
-			format[i] == 'f' || format[i] == 's';
-		       	printf("%s", check ? sep : "");
-			sep = check ? ", " : sep;
-			check && format[i] == 'c' ? printf("%c", 
-			va_arg(args, int)) : 0;
-			check && format[i] == 'i' ? printf("%d",
-			va_arg(args, int)) : 0;
-			check && format[i] == 'i' ? printf("%d", 
-			va_arg(args, int)) : 0;
-			check && format[i] == 's' ? (str = 
-			va_arg(args, char *), 
-			printf("%s", str ? str : "(nil)")) : 0;
-			i++;
+			c = (char)va_arg(args, int);
+			printf("%c", c);
 		}
-		break;
+		else if (*ptr == 'i')
+		{
+			i = va_arg(args, int);
+			printf("%d", i);
+		}
+		else if (*ptr == 'f')
+		{
+			f = (float)va_arg(args, double);
+			printf("%f", f);
+		}
+		else if (*ptr == 's')
+		{
+			str = va_arg(args, char *);
+			if (str == NULL)
+				printf("(nil)");
+			else
+				printf("%s", str);
+		}
+
+		ptr++;
+		if (*ptr)
+			printf(", ");
 	}
 
 	va_end(args);
