@@ -15,25 +15,27 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	const char *ptr = format;
+const char *ptr = format;
 	char *str;
 	char c;
 	int i;
 	float f;
-	int printed = 0;
+	int printed = 0; /* Track if something has been printed */
 
 	va_start(args, format);
 
 	while (*ptr)
 	{
+		/* First if: Check if the format specifier is valid */
 		if (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's')
 		{
+			/* Second if: Print separator if something has already been printed */
 			if (printed)
 				printf(", ");
 
-			printed = 1;
-			
+			printed = 1; /* Mark that something has been printed */
+
+			/* Use a switch statement to handle each format specifier */
 			switch (*ptr)
 			{
 				case 'c':
@@ -63,4 +65,3 @@ void print_all(const char * const format, ...)
 
 	va_end(args);
 	printf("\n");
-}
