@@ -53,7 +53,7 @@ void print_all(const char * const format, ...)
 					if (str == NULL)
 						printf("(nil)");
 					else
-						prinf("%s", str);
+						printf("%s", str);
 					break;
 			}
 		}
