@@ -33,15 +33,29 @@ void print_all(const char * const format, ...)
 				printf(", ");
 
 			printed = 1;
-
-			(*ptr == 'c') && (c = (char)va_arg(args, int),
-		 	printf("%c", c));
-			(*ptr == 'i') && (i = va_arg(args, int),
-			printf("%d", i));
-			(*ptr == 'f') && (f = (float)va_arg(args, double),
-			printf("%f", f));
-			(*ptr == 's') && ((str = va_arg(args, char *)) == NULL ?
-			printf("(nil)"): printf("%s", str)); 
+			
+			switch (*ptr)
+			{
+				case 'c':
+					c = (char)va_arg(args, int);
+					printf("%c", c);
+					break;
+				case 'i':
+					i = va_arg(args, int);
+					printf("%d", i);
+					break;
+				case 'f':
+					f = (float)va_arg(args, double);
+					printf("%f", f);
+					break;
+				case 's':
+					str = va_arg(args, char *);
+					if (str == NULL)
+						printf("(nil)");
+					else
+						prinf("%s", str);
+					break;
+			}
 		}
 
 		ptr++;
