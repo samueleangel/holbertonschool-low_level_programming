@@ -7,7 +7,7 @@
 #define BUF_SIZE 1024
 
 /**
- * main- Copies the content of a file to another file.
+ * main - Copies the content of a file to another file.
  * @argc: Number of arguments.
  * @argv: Array of arguments.
  *
@@ -37,6 +37,14 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can´t write to file %s\n", argv[2]);
 		close(fd_from);
+		exit(99);
+	}
+
+	if (access(argv[2], W_OK) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can´t write to file %s\n", argv[2]);
+		close(fd_from);
+		close(fd_to);
 		exit(99);
 	}
 
