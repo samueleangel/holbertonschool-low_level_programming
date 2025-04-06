@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 	if (fd_to == -1)
 	{
@@ -40,13 +40,13 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if (access(argv[2], W_OK) == -1)
+	/*if (access(argv[2], W_OK) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 		close(fd_from);
 		close(fd_to);
 		exit(99);
-	}
+	}*/
 
 	while ((read_bytes = read(fd_from, buffer, BUF_SIZE)) > 0)
 	{
