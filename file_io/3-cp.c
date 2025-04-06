@@ -48,18 +48,28 @@ int main(int argc, char *argv[])
 		exit(99);
 	}*/
 
-	while ((read_bytes = read(fd_from, buffer, BUF_SIZE)) > 0)
+	while (1)
 	{
-		write_bytes = write(fd_to, buffer, read_bytes);
-		if (write_bytes == -1 || write_bytes != read_bytes)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(fd_from);
-			close(fd_to);
-			exit(99);
-		}
+	read_bytes = read(fd_from, buffer, BUF_SIZE);
+	if (read_bytes == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		close(fd_from);
+		close(fd_to);
+		exit(98);
 	}
+	if (read_bytes == 0)
+		break;
 
+	write_bytes = write(fd_to, buffer, read_bytes);
+	if (write_bytes == -1 || write_bytes != read_bytes)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		close(fd_from);
+		close(fd_to);
+		exit(99);
+	}
+	
 	if (read_bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can´t read from file %s\n", argv[1]);
@@ -67,6 +77,7 @@ int main(int argc, char *argv[])
 		close(fd_to);
 		exit(98);
 	}
+}
 
 	if (close(fd_to) == -1)
 	{
