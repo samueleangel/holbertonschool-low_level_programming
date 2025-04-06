@@ -53,10 +53,10 @@ int main(int argc, char *argv[])
 		write_bytes = write(fd_to, buffer, read_bytes);
 		if (write_bytes == -1 || write_bytes != read_bytes)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read to file %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(fd_from);
 			close(fd_to);
-			exit(98);
+			exit(99);
 		}
 	}
 
@@ -68,11 +68,17 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (close(fd_to) == 1)
+	if (close(fd_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
+
+	if (close(fd_from) == -1)
+        {
+                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
+                exit(100);
+        }
 
 	return (0);
 }
